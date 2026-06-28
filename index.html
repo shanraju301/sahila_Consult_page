@@ -465,6 +465,12 @@
   }
   .method-result p{font-family:'Fraunces'; font-style:italic; font-size:20px; color:var(--dark); line-height:1.45;}
 
+  .positioning-map-wrap{
+    max-width:780px; margin:0 auto; border-radius:20px; overflow:hidden;
+    box-shadow:0 24px 60px -24px rgba(26,46,42,0.25); border:1px solid var(--line);
+  }
+  .positioning-map-wrap img{width:100%; height:auto; display:block;}
+
   @media (max-width:780px){
     .method-grid{grid-template-columns:1fr; gap:18px;}
     .method-plus{margin:0 auto; transform:rotate(90deg);}
@@ -521,7 +527,7 @@
         <h2>Before You Book, <span class="italic-accent">Hear It From Her Directly</span></h2>
         <p>A short, personal note on what to expect from your consultation — and why she built it this way.</p>
       </div>
-      <div class="video-tile-vertical" data-vimeo-id="1193440036" data-vimeo-hash="9b2092fb7e" onclick="loadVideo(this)">
+      <div class="video-tile-vertical" data-vimeo-id="1193042970" data-vimeo-hash="760d41768e" onclick="loadVideo(this)">
         <img src="assets/dr-sahila-intro-thumb.jpg" alt="Dr. Sahila introduces the $39 discovery consultation">
         <div class="play-btn">
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 3l16 9-16 9V3z" fill="#1a2e2c"/></svg>
@@ -543,38 +549,14 @@ function loadVideo(tile) {
 }
 </script>
 
-<!-- ============ METHOD: MODERN + ANCIENT ============ -->
+<!-- ============ HER APPROACH ============ -->
 <section class="section section-white">
   <div class="wrap center">
     <span class="section-eyebrow">Her Approach</span>
-    <h2>Modern Medicine. <span class="italic-accent">Ancient Wisdom.</span> One Conversation.</h2>
-    <p class="section-sub">Dr. Sahila doesn't choose between the two — she trained in both, and brings both into your consultation.</p>
-
-    <div class="method-grid">
-      <div class="method-card modern">
-        <div class="method-ic">🩺</div>
-        <h4>Modern Medicine</h4>
-        <p>15+ years as a board-certified internal medicine physician, trained at Princeton Medical Center.</p>
-        <div class="method-tags">
-          <span class="method-tag">Lab &amp; Clinical Review</span>
-          <span class="method-tag">Diagnostic Reasoning</span>
-        </div>
-      </div>
-      <div class="method-plus">+</div>
-      <div class="method-card ancient">
-        <div class="method-ic">🪷</div>
-        <h4>Ancient Wisdom</h4>
-        <p>Yoga, breathwork, and meditation studied at their source in India — the same practices that made her pill-free.</p>
-        <div class="method-tags">
-          <span class="method-tag">Breathwork</span>
-          <span class="method-tag">Meditation</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="method-result">
-      <span class="method-result-label">What This Means For You</span>
-      <p>"It's not about replacing medicine with breathing exercises — it's about understanding what's actually keeping your body locked in a stress response, and helping it unlock its own ability to heal."</p>
+    <h2>The Only One Doing <span class="italic-accent">All Four</span></h2>
+    <p class="section-sub">Dr. Sahila doesn't choose between medical authority and spiritual depth — she brings both into your consultation.</p>
+    <div class="positioning-map-wrap" style="margin-top:40px;">
+      <img src="assets/positioning-map.png" alt="Dr. Sahila positioning map: spiritual depth, disease reversal, medical authority, and wellness guidance">
     </div>
   </div>
 </section>
