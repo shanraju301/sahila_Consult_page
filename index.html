@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your $39 Discovery Consultation With Dr. Sahila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1f8b80;
+    --teal-dark:#15605a;
+    --rust:#C17A5A;
+    --rust-light:#dba089;
+    --cream:#faf4ee;
+    --dark:#1a2e2c;
+    --white:#ffffff;
+    --line:rgba(26,46,42,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans', sans-serif;
+    color:var(--dark);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; line-height:1.12; letter-spacing:-0.01em;}
+  .italic-accent{font-style:italic; color:var(--rust); font-weight:500;}
+  .teal-accent{color:var(--teal);}
+  a{color:inherit;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    font-family:'DM Sans', sans-serif; font-weight:700; font-size:16px;
+    padding:18px 38px; border-radius:100px; border:none; cursor:pointer;
+    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
+    letter-spacing:0.01em;
+  }
+  .btn-primary{background:var(--rust); color:var(--white); box-shadow:0 8px 24px -8px rgba(193,122,90,0.55);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(193,122,90,0.65);}
+  .btn-outline{background:transparent; color:var(--dark); border:1.5px solid var(--dark);}
+  .btn-outline:hover{background:var(--dark); color:var(--white);}
+  .btn-arrow{font-size:18px; transition:transform .15s ease;}
+  .btn:hover .btn-arrow{transform:translateX(3px);}
+  .btn-row{display:flex; justify-content:center;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--dark); color:var(--cream); font-size:13px; font-weight:500;
+    text-align:center; padding:10px 16px; letter-spacing:0.03em;
+  }
+  .topbar span{color:var(--rust-light); font-weight:700;}
+
+  /* ---------- Hero (scattered quotes + center hook) ---------- */
+  .hero{
+    background:var(--cream);
+    position:relative;
+    padding:70px 0 70px;
+  }
+  .hero-stage{
+    position:relative; max-width:780px; margin:0 auto;
+    min-height:600px;
+  }
+  .quote-card{
+    position:absolute; background:var(--white); border-radius:14px;
+    padding:16px 20px; box-shadow:0 14px 30px -10px rgba(26,46,42,0.18);
+    font-family:'Fraunces', serif; font-weight:600; font-style:italic;
+    font-size:15.5px; color:var(--dark); line-height:1.35; max-width:200px;
+  }
+  .quote-1{top:0; left:-10px; transform:rotate(-7deg);}
+  .quote-2{top:6px; right:-14px; transform:rotate(6deg);}
+  .quote-3{top:160px; left:-36px; transform:rotate(-4deg); max-width:170px;}
+  .quote-4{top:185px; right:-30px; transform:rotate(8deg); max-width:185px;}
+  .quote-5{bottom:60px; left:-22px; transform:rotate(5deg); max-width:190px;}
+  .quote-6{bottom:30px; right:-18px; transform:rotate(-6deg); max-width:195px;}
+
+  .hook-card{
+    position:absolute; top:130px; left:50%; transform:translateX(-50%);
+    z-index:2; background:var(--dark); border-radius:28px;
+    padding:56px 60px; max-width:520px; width:100%; text-align:center;
+    box-shadow:0 36px 70px -24px rgba(26,46,42,0.45);
+  }
+  .hook-eyebrow{
+    font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--rust-light); margin-bottom:18px; display:block;
+  }
+  .hook-card h1{
+    color:var(--white); font-size:34px; line-height:1.22; margin-bottom:22px;
+  }
+  .hook-card h1 .hl{color:#7fd8c8;}
+  .hook-divider{width:42px; height:2px; background:var(--rust-light); margin:0 auto 22px; border-radius:2px;}
+  .hook-sub{color:rgba(255,255,255,0.75); font-size:15px; line-height:1.55; max-width:380px; margin:0 auto;}
+
+  .hero-bottom{
+    position:relative; z-index:2; display:flex; flex-direction:column; align-items:center;
+    gap:26px; margin-top:46px; text-align:center;
+  }
+  .hero-doc-row{display:flex; align-items:center; gap:16px;}
+  .hero-doc-photo{
+    width:64px; height:64px; border-radius:50%; overflow:hidden; flex-shrink:0;
+    border:3px solid var(--white); box-shadow:0 8px 20px -6px rgba(26,46,42,0.3);
+  }
+  .hero-doc-photo img{width:100%; height:100%; object-fit:cover; object-position:top center;}
+  .hero-doc-text{text-align:left;}
+  .hero-doc-name{font-family:'Fraunces'; font-weight:600; font-size:16px; color:var(--dark);}
+  .hero-doc-role{font-size:13px; color:#52615d;}
+  .hero-micro{color:#6b7a77; font-size:13.5px; margin-top:4px;}
+
+  @media (max-width:860px){
+    .hero-stage{min-height:520px;}
+    .quote-card{font-size:13.5px; padding:12px 16px; max-width:150px !important;}
+    .hook-card{padding:40px 28px; margin-top:110px;}
+    .hook-card h1{font-size:26px;}
+  }
+  @media (max-width:600px){
+    .hero-stage{min-height:780px; max-width:340px;}
+    .quote-1{top:0; left:0; transform:rotate(-6deg);}
+    .quote-2{top:0; right:0; transform:rotate(5deg);}
+    .quote-3{top:600px; left:-6px; transform:rotate(-4deg);}
+    .quote-4{top:630px; right:-6px; transform:rotate(6deg);}
+    .quote-5{display:none;}
+    .quote-6{display:none;}
+    .hook-card{top:95px; padding:34px 22px;}
+    .hook-card h1{font-size:23px;}
+  }
+
+  /* ---------- Why wait section ---------- */
+  .section{padding:88px 0;}
+  .section-cream{background:var(--cream);}
+  .section-white{background:var(--white);}
+  .section-dark{background:var(--dark); color:var(--cream);}
+  .center{text-align:center;}
+  .section-eyebrow{
+    font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--rust); margin-bottom:14px; display:block;
+  }
+  .section h2{font-size:36px; max-width:680px; margin:0 auto 16px;}
+  .section-sub{font-size:17px; color:#4d5e5a; max-width:580px; margin:0 auto;}
+  .divider-mark{
+    width:46px; height:3px; background:var(--rust); margin:22px auto 0; border-radius:3px;
+  }
+
+  .pain-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:50px 0 40px;
+  }
+  .pain-card{
+    background:var(--white); border:1px solid var(--line); border-radius:18px;
+    padding:26px 20px; text-align:center;
+  }
+  .pain-x{
+    width:38px; height:38px; border-radius:50%; background:#fbeae3; color:var(--rust);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 14px; font-size:18px; font-weight:700;
+  }
+  .pain-card p{font-size:14.5px; color:#445450; font-weight:500;}
+
+  .compare-box{
+    background:var(--dark); border-radius:24px; padding:44px 48px; margin-top:10px;
+    display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;
+  }
+  .compare-box h4{
+    color:var(--rust-light); font-family:'Fraunces'; font-size:21px; font-weight:600; margin-bottom:18px;
+  }
+  .compare-list{list-style:none; display:flex; flex-direction:column; gap:13px;}
+  .compare-list li{display:flex; gap:10px; color:rgba(255,255,255,0.9); font-size:15px;}
+  .compare-list.no li::before{content:"✕"; color:#e2876a; font-weight:700; flex-shrink:0;}
+  .compare-list.yes li::before{content:"✓"; color:#7fd8c8; font-weight:700; flex-shrink:0;}
+  .compare-divider{width:1px; background:rgba(255,255,255,0.15); height:100%; display:none;}
+
+  /* ---------- Sound familiar ---------- */
+  .familiar-card{
+    background:var(--white); border-radius:28px; border:1px solid var(--line);
+    padding:54px 60px; max-width:760px; margin:46px auto 0;
+    box-shadow:0 24px 60px -30px rgba(26,46,42,0.18);
+  }
+  .familiar-list{list-style:none; display:flex; flex-direction:column; gap:20px; margin-bottom:34px; text-align:left;}
+  .familiar-list li{display:flex; gap:14px; font-size:16px; color:var(--dark);}
+  .familiar-check{
+    flex-shrink:0; width:24px; height:24px; border-radius:50%; background:var(--teal);
+    color:var(--white); display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:1px;
+  }
+  .familiar-close{
+    text-align:center; font-style:italic; font-family:'Fraunces'; font-size:18px;
+    color:var(--teal-dark); border-top:1px solid var(--line); padding-top:28px; margin-bottom:30px;
+  }
+
+  /* ---------- Three stages ---------- */
+  .stage-track{position:relative; margin:56px 0 20px;}
+  .stage-line{
+    position:absolute; top:38px; left:8%; right:8%; height:2px; background:var(--line); z-index:0;
+  }
+  .stage-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative; z-index:1;}
+  .stage-card{text-align:center;}
+  .stage-num{
+    width:76px; height:76px; border-radius:50%; background:var(--white); border:2px solid var(--teal);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 22px;
+    font-family:'Fraunces'; font-size:26px; font-weight:600; color:var(--teal);
+    box-shadow:0 10px 24px -12px rgba(31,139,128,0.4);
+  }
+  .stage-card.active .stage-num{background:var(--teal); color:var(--white);}
+  .stage-card h3{font-size:21px; margin-bottom:8px;}
+  .stage-tag{font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--rust); margin-bottom:10px; display:block;}
+  .stage-card p{font-size:14.5px; color:#52615d; max-width:260px; margin:0 auto;}
+
+  /* ---------- Transformation grid ---------- */
+  .trans-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:50px 0 44px;}
+  .trans-grid .span-2{grid-column:span 1;}
+  .trans-card{
+    background:var(--white); border-radius:20px; padding:30px 26px; border:1px solid var(--line);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .trans-card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(26,46,42,0.2);}
+  .trans-ic{
+    width:46px; height:46px; border-radius:13px; background:#e8f3f1; color:var(--teal);
+    display:flex; align-items:center; justify-content:center; font-size:21px; margin-bottom:18px;
+  }
+  .trans-card p{font-size:15px; color:var(--dark); font-weight:500;}
+
+  /* ---------- What's included ---------- */
+  .included-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:50px 0 16px;}
+  .included-card{
+    background:var(--cream); border-radius:20px; padding:32px 28px; border:1px solid var(--line);
+  }
+  .included-num{
+    font-family:'Fraunces'; font-style:italic; color:var(--rust); font-size:15px; font-weight:600; margin-bottom:14px; display:block;
+  }
+  .included-card h4{font-size:18px; margin-bottom:10px;}
+  .included-card p{font-size:14.5px; color:#52615d;}
+  .included-foot{text-align:center; font-size:13.5px; color:#6b7a77; margin-top:28px;}
+
+  /* ---------- Meet the doctor ---------- */
+  .doc-section{
+    background:var(--teal); color:var(--white); border-radius:32px; padding:64px 60px;
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:54px; align-items:center; margin:0 auto;
+  }
+  .doc-photo-wrap{position:relative;}
+  .doc-photo{
+    border-radius:160px 160px 16px 16px; overflow:hidden; border:5px solid rgba(255,255,255,0.25);
+    box-shadow:0 24px 50px -16px rgba(0,0,0,0.35);
+  }
+  .doc-photo img{height:380px; object-fit:cover; width:100%; object-position:top center;}
+  .doc-credential-pill{
+    position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
+    background:var(--white); color:var(--dark); padding:10px 22px; border-radius:100px;
+    font-size:13px; font-weight:700; white-space:nowrap; box-shadow:0 10px 24px -8px rgba(0,0,0,0.25);
+  }
+  .doc-name{font-size:30px; margin-bottom:6px;}
+  .doc-role{color:#d9f0ec; font-size:14.5px; margin-bottom:26px; font-weight:500;}
+  .doc-text p{font-size:16px; color:rgba(255,255,255,0.92); margin-bottom:16px;}
+  .doc-stats{display:flex; gap:34px; margin-top:26px; flex-wrap:wrap;}
+  .doc-stat-num{font-family:'Fraunces'; font-size:25px; font-weight:600; color:#ffd9bf;}
+  .doc-stat-label{font-size:12.5px; color:rgba(255,255,255,0.8); margin-top:2px;}
+
+  /* ---------- Proof section ---------- */
+  .proof-hero{
+    background:var(--dark); border-radius:28px; padding:60px 56px; color:var(--white);
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-bottom:48px;
+  }
+  .proof-eyebrow{color:var(--rust-light); font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px; display:block;}
+  .proof-quote{font-family:'Fraunces'; font-style:italic; font-size:23px; line-height:1.4; color:var(--white); margin-bottom:20px;}
+  .proof-name{font-size:14px; color:rgba(255,255,255,0.7);}
+  .proof-stats{display:flex; flex-direction:column; gap:22px;}
+  .proof-stat-row{display:flex; align-items:baseline; gap:14px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:18px;}
+  .proof-stat-row:last-child{border-bottom:none; padding-bottom:0;}
+  .proof-stat-num{font-family:'Fraunces'; font-size:38px; font-weight:600; color:#7fd8c8; line-height:1;}
+  .proof-stat-text{font-size:14.5px; color:rgba(255,255,255,0.85); max-width:260px;}
+
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testimonial-card{
+    background:var(--white); border-radius:18px; padding:28px 26px; border:1px solid var(--line);
+  }
+  .testimonial-card p{font-size:14.5px; font-style:italic; color:var(--dark); margin-bottom:18px; line-height:1.55;}
+  .testimonial-foot{display:flex; align-items:center; gap:10px;}
+  .testimonial-avatar{
+    width:36px; height:36px; border-radius:50%; background:var(--teal); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;
+  }
+  .testimonial-name{font-size:13px; font-weight:700; color:var(--dark);}
+  .testimonial-tag{font-size:12px; color:#6b7a77;}
+
+  /* ---------- Pricing ---------- */
+  .pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:50px 0 30px;}
+  .price-card{
+    background:var(--white); border-radius:22px; border:1.5px solid var(--line); padding:36px 30px;
+    display:flex; flex-direction:column;
+  }
+  .price-card.featured{border-color:var(--rust); box-shadow:0 24px 50px -24px rgba(193,122,90,0.4); position:relative;}
+  .price-pill{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--rust); color:var(--white); font-size:12px; font-weight:700;
+    padding:6px 16px; border-radius:100px; letter-spacing:0.03em; white-space:nowrap;
+  }
+  .price-stage{font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--rust); margin-bottom:8px;}
+  .price-card h3{font-size:22px; margin-bottom:6px;}
+  .price-card .sub{font-size:13.5px; color:#6b7a77; margin-bottom:20px;}
+  .price-amount{font-family:'Fraunces'; font-size:38px; font-weight:600; color:var(--dark); margin-bottom:4px;}
+  .price-amount span{font-size:15px; color:#6b7a77; font-weight:400; font-family:'DM Sans';}
+  .price-split{font-size:13px; color:#6b7a77; margin-bottom:24px;}
+  .price-feats{list-style:none; display:flex; flex-direction:column; gap:11px; margin-bottom:26px; flex-grow:1;}
+  .price-feats li{display:flex; gap:9px; font-size:14px; color:#3d4d49;}
+  .price-feats li::before{content:"✓"; color:var(--teal); font-weight:700; flex-shrink:0;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px; margin:44px auto 0; display:flex; flex-direction:column; gap:14px;}
+  .faq-item{
+    background:var(--white); border-radius:16px; border:1px solid var(--line); overflow:hidden;
+  }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; padding:22px 26px;
+    cursor:pointer; font-weight:600; font-size:15.5px; list-style:none;
+  }
+  .faq-q::-webkit-details-marker{display:none;}
+  .faq-icon{
+    width:26px; height:26px; border-radius:50%; background:var(--cream); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--rust);
+    transition:transform .2s ease;
+  }
+  details[open] .faq-icon{transform:rotate(45deg);}
+  .faq-a{padding:0 26px 22px; font-size:14.5px; color:#4d5e5a; line-height:1.6;}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:var(--teal); border-radius:32px; padding:64px 56px; text-align:center; color:var(--white);
+    position:relative; overflow:hidden;
+  }
+  .final-cta h2{color:var(--white); font-size:34px; max-width:640px; margin:0 auto 16px;}
+  .final-cta p{color:rgba(255,255,255,0.85); font-size:16.5px; max-width:480px; margin:0 auto 34px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dark); color:rgba(255,255,255,0.6); padding:36px 0; font-size:13px;}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .footer-logo{color:var(--white); font-family:'Fraunces'; font-weight:600; font-size:16px;}
+
+  /* ---------- Sticky mobile CTA ---------- */
+  .sticky-cta{
+    display:none; position:fixed; bottom:0; left:0; right:0; z-index:50;
+    background:var(--white); padding:14px 18px; box-shadow:0 -10px 30px -10px rgba(0,0,0,0.2);
+  }
+  .sticky-cta .btn{width:100%;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr; gap:46px;}
+    .hero h1{font-size:38px;}
+    .hero-photo-col{order:-1;}
+    .pain-grid{grid-template-columns:repeat(2,1fr);}
+    .compare-box{grid-template-columns:1fr; padding:34px 28px;}
+    .stage-grid{grid-template-columns:1fr; gap:34px;}
+    .stage-line{display:none;}
+    .trans-grid{grid-template-columns:1fr 1fr;}
+    .included-grid{grid-template-columns:1fr;}
+    .doc-section{grid-template-columns:1fr; padding:44px 30px; text-align:center;}
+    .doc-photo{margin:0 auto; max-width:300px;}
+    .doc-stats{justify-content:center;}
+    .proof-hero{grid-template-columns:1fr; padding:40px 30px;}
+    .testimonial-grid{grid-template-columns:1fr;}
+    .pricing-grid{grid-template-columns:1fr;}
+    .section h2{font-size:28px;}
+    .familiar-card{padding:38px 26px;}
+    .sticky-cta{display:block;}
+    body{padding-bottom:78px;}
+  }
+  /* ---------- Video tile (click-to-load) ---------- */
+  .video-section{padding:0 0 88px;}
+  .video-wrap{max-width:720px; margin:0 auto;}
+  .video-split{
+    display:grid; grid-template-columns:1fr 0.85fr; gap:56px; align-items:center;
+  }
+  .video-split-text{text-align:left;}
+  .video-split-text .section-eyebrow{display:block;}
+  .video-split-text h2{margin-bottom:16px; font-size:32px;}
+  .video-split-text p{font-size:16px; color:#4d5e5a; max-width:440px; margin-bottom:0;}
+  .video-tile-vertical{
+    position:relative; width:100%; max-width:300px; margin:0 auto;
+    aspect-ratio:9/16; border-radius:24px; overflow:hidden;
+    cursor:pointer; background:var(--dark); box-shadow:0 30px 60px -20px rgba(26,46,42,0.4);
+  }
+  .video-tile-vertical img{width:100%; height:100%; object-fit:cover; transition:transform .3s ease;}
+  .video-tile-vertical:hover img{transform:scale(1.03);}
+  .video-tile-vertical .play-btn{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:68px; height:68px; border-radius:50%; background:rgba(255,255,255,0.95);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px -8px rgba(0,0,0,0.4);
+    transition:transform .2s ease;
+  }
+  .video-tile-vertical:hover .play-btn{transform:translate(-50%,-50%) scale(1.08);}
+  .video-tile-vertical .play-btn svg{width:24px; height:24px; margin-left:3px;}
+  .video-tile-vertical .video-caption{
+    position:absolute; bottom:0; left:0; right:0; padding:18px 16px;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color:var(--white); font-size:13.5px; font-weight:600; text-align:center;
+  }
+  .video-tile-vertical iframe{width:100%; height:100%; border:none; display:block;}
+  .video-tile-vertical.is-playing{cursor:default;}
+  .video-tile-vertical.is-playing:hover img{transform:none;}
+
+  .video-tile{
+    position:relative; width:100%; aspect-ratio:16/9; border-radius:20px; overflow:hidden;
+    cursor:pointer; background:var(--dark); box-shadow:0 24px 60px -24px rgba(26,46,42,0.35);
+  }
+  .video-tile img{width:100%; height:100%; object-fit:cover; transition:transform .3s ease;}
+  .video-tile:hover img{transform:scale(1.03);}
+  .video-tile .play-btn{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:74px; height:74px; border-radius:50%; background:rgba(255,255,255,0.95);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px -8px rgba(0,0,0,0.4);
+    transition:transform .2s ease;
+  }
+  .video-tile:hover .play-btn{transform:translate(-50%,-50%) scale(1.08);}
+  .video-tile .play-btn svg{width:26px; height:26px; margin-left:3px;}
+  .video-tile .video-caption{
+    position:absolute; bottom:0; left:0; right:0; padding:20px 22px;
+    background:linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+    color:var(--white); font-size:14.5px; font-weight:600;
+  }
+  .video-tile iframe{width:100%; height:100%; border:none; display:block;}
+  .video-tile.is-playing{cursor:default;}
+  .video-tile.is-playing:hover img{transform:none;}
+
+  @media (max-width:780px){
+    .video-split{grid-template-columns:1fr; gap:36px; text-align:center;}
+    .video-split-text{text-align:center;}
+    .video-split-text p{margin-left:auto; margin-right:auto;}
+  }
+
+  /* ---------- Method (modern + ancient) ---------- */
+  .method-grid{
+    display:grid; grid-template-columns:1fr auto 1fr; gap:0; align-items:center;
+    margin:50px 0 10px; max-width:920px; margin-left:auto; margin-right:auto;
+  }
+  .method-card{
+    background:var(--white); border-radius:22px; border:1px solid var(--line);
+    padding:36px 32px; text-align:center; position:relative;
+  }
+  .method-ic{
+    width:58px; height:58px; border-radius:50%; margin:0 auto 18px;
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+  }
+  .method-card.modern .method-ic{background:#e8f3f1; color:var(--teal);}
+  .method-card.ancient .method-ic{background:#fbeae3; color:var(--rust);}
+  .method-card h4{font-size:19px; margin-bottom:10px;}
+  .method-card p{font-size:14.5px; color:#52615d;}
+  .method-tags{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:18px;}
+  .method-tag{
+    font-size:12.5px; font-weight:600; padding:6px 14px; border-radius:100px;
+  }
+  .method-card.modern .method-tag{background:#e8f3f1; color:var(--teal-dark);}
+  .method-card.ancient .method-tag{background:#fbeae3; color:var(--rust);}
+  .method-plus{
+    width:48px; height:48px; border-radius:50%; background:var(--dark); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces'; font-size:24px;
+    margin:0 18px; flex-shrink:0; position:relative; z-index:1;
+  }
+  .method-result{
+    text-align:center; margin-top:30px; padding-top:30px; border-top:1px solid var(--line);
+    max-width:560px; margin-left:auto; margin-right:auto;
+  }
+  .method-result-label{
+    font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--rust);
+    margin-bottom:10px; display:block;
+  }
+  .method-result p{font-family:'Fraunces'; font-style:italic; font-size:20px; color:var(--dark); line-height:1.45;}
+
+  @media (max-width:780px){
+    .method-grid{grid-template-columns:1fr; gap:18px;}
+    .method-plus{margin:0 auto; transform:rotate(90deg);}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">LIMITED AVAILABILITY THIS MONTH — <span>$39 Discovery Consultation With Dr. Sahila</span></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-stage">
+      <div class="quote-card quote-1">"Your A1C is borderline — let's keep monitoring it."</div>
+      <div class="quote-card quote-2">"Thyroid's a little off, nothing major."</div>
+      <div class="quote-card quote-3">"Your cholesterol is high. Let's add another pill."</div>
+      <div class="quote-card quote-4">"PCOD is common, just manage your weight."</div>
+      <div class="quote-card quote-5">"Your kidney numbers are something to watch."</div>
+      <div class="quote-card quote-6">"It's probably just stress."</div>
+
+      <div class="hook-card">
+        <span class="hook-eyebrow">Sound Familiar?</span>
+        <h1>Seen Every Doctor. <span class="hl">Still No Real Answer?</span></h1>
+        <div class="hook-divider"></div>
+        <p class="hook-sub">Modern medicine manages your numbers. It was never designed to find what's actually driving your diabetes, thyroid, PCOD, or blood pressure.</p>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-doc-row">
+        <div class="hero-doc-photo">
+          <img src="assets/DSC075044change.jpg" alt="Dr. Sahila">
+        </div>
+        <div class="hero-doc-text">
+          <div class="hero-doc-name">Dr. Sahila, MD</div>
+          <div class="hero-doc-role">Board-Certified Internal Medicine, NJ</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a href="https://pages.sahila.me/consult_sahila" class="btn btn-primary">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
+      </div>
+      <p class="hero-micro">Just $39 · 30 minutes with Dr. Sahila · Limited slots each week</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO VIDEO ============ -->
+<section class="section video-section section-cream" style="padding-top:64px;">
+  <div class="wrap">
+    <div class="video-split">
+      <div class="video-split-text">
+        <span class="section-eyebrow">A Quick Word From Dr. Sahila</span>
+        <h2>Before You Book, <span class="italic-accent">Hear It From Her Directly</span></h2>
+        <p>A short, personal note on what to expect from your consultation — and why she built it this way.</p>
+      </div>
+      <div class="video-tile-vertical" data-vimeo-id="1193440036" data-vimeo-hash="9b2092fb7e" onclick="loadVideo(this)">
+        <img src="assets/dr-sahila-intro-thumb.jpg" alt="Dr. Sahila introduces the $39 discovery consultation">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 3l16 9-16 9V3z" fill="#1a2e2c"/></svg>
+        </div>
+        <div class="video-caption">Dr. Sahila — What To Expect (2 min)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function loadVideo(tile) {
+  if (tile.classList.contains('is-playing')) return;
+  const vimeoId = tile.getAttribute('data-vimeo-id');
+  const vimeoHash = tile.getAttribute('data-vimeo-hash');
+  tile.classList.add('is-playing');
+  const hashParam = vimeoHash ? '&h=' + vimeoHash : '';
+  tile.innerHTML = '<iframe src="https://player.vimeo.com/video/' + vimeoId + '?autoplay=1' + hashParam + '&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>';
+}
+</script>
+
+<!-- ============ METHOD: MODERN + ANCIENT ============ -->
+<section class="section section-white">
+  <div class="wrap center">
+    <span class="section-eyebrow">Her Approach</span>
+    <h2>Modern Medicine. <span class="italic-accent">Ancient Wisdom.</span> One Conversation.</h2>
+    <p class="section-sub">Dr. Sahila doesn't choose between the two — she trained in both, and brings both into your consultation.</p>
+
+    <div class="method-grid">
+      <div class="method-card modern">
+        <div class="method-ic">🩺</div>
+        <h4>Modern Medicine</h4>
+        <p>15+ years as a board-certified internal medicine physician, trained at Princeton Medical Center.</p>
+        <div class="method-tags">
+          <span class="method-tag">Lab &amp; Clinical Review</span>
+          <span class="method-tag">Diagnostic Reasoning</span>
+        </div>
+      </div>
+      <div class="method-plus">+</div>
+      <div class="method-card ancient">
+        <div class="method-ic">🪷</div>
+        <h4>Ancient Wisdom</h4>
+        <p>Yoga, breathwork, and meditation studied at their source in India — the same practices that made her pill-free.</p>
+        <div class="method-tags">
+          <span class="method-tag">Breathwork</span>
+          <span class="method-tag">Meditation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-result">
+      <span class="method-result-label">What This Means For You</span>
+      <p>"It's not about replacing medicine with breathing exercises — it's about understanding what's actually keeping your body locked in a stress response, and helping it unlock its own ability to heal."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WAIT ============ -->
+<section class="section section-cream">
+  <div class="wrap center">
+    <span class="section-eyebrow">Why Wait Weeks For An Answer?</span>
+    <h2>Get A Physician's Honest Read On Your Health, <span class="italic-accent">Without The Usual Runaround</span></h2>
+    <p class="section-sub">Getting real answers usually means more specialists, more waiting, and a rushed visit at the end of it. Here's what that typically looks like:</p>
+
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-x">✕</div><p>Weeks of waiting for the next available appointment</p></div>
+      <div class="pain-card"><div class="pain-x">✕</div><p>10-minute visits with a prescription pad, not a plan</p></div>
+      <div class="pain-card"><div class="pain-x">✕</div><p>Paying full specialist fees just to get a first opinion</p></div>
+      <div class="pain-card"><div class="pain-x">✕</div><p>Leaving with more questions than you came in with</p></div>
+    </div>
+
+    <div class="compare-box">
+      <div>
+        <h4>The Usual Path</h4>
+        <ul class="compare-list no">
+          <li>Weeks on a waitlist for a specialist</li>
+          <li>A rushed appointment with little time to ask questions</li>
+          <li>Generic advice that doesn't fit your specific history</li>
+          <li>No clear next step once the visit ends</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Your $39 Consultation</h4>
+        <ul class="compare-list yes">
+          <li>Booked and confirmed within days, not weeks</li>
+          <li>30 unhurried minutes, 1-on-1 with Dr. Sahila</li>
+          <li>Reviewed against your actual history and labs</li>
+          <li>You leave with a clear, personal next step</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ HOW IT HELPS ============ -->
+<section class="section section-cream">
+  <div class="wrap center">
+    <span class="section-eyebrow">What This Consultation Gives You</span>
+    <h2>How This <span class="italic-accent">30-Minute Call</span> Helps</h2>
+    <p class="section-sub">This isn't a sales call. It's a real clinical conversation about what's happening in your body.</p>
+
+    <div class="trans-grid">
+      <div class="trans-card">
+        <div class="trans-ic">🔍</div>
+        <p>You'll finally have a physician look at your full history — symptoms, medications, and what you've already tried.</p>
+      </div>
+      <div class="trans-card">
+        <div class="trans-ic">📋</div>
+        <p>You'll get a clear, honest read on what might be driving what you're feeling — not a guess, a clinical opinion.</p>
+      </div>
+      <div class="trans-card">
+        <div class="trans-ic">🩺</div>
+        <p>You'll be speaking directly with Dr. Sahila — a board-certified internal medicine physician, not a coach or intake coordinator.</p>
+      </div>
+      <div class="trans-card">
+        <div class="trans-ic">📝</div>
+        <p>You'll leave with a personalized recommendation for your next step, specific to your case.</p>
+      </div>
+      <div class="trans-card">
+        <div class="trans-ic">💬</div>
+        <p>You'll have the space to ask the questions a 10-minute appointment never gives you time for.</p>
+      </div>
+      <div class="trans-card">
+        <div class="trans-ic">🏠</div>
+        <p>You'll do it all from home — no travel, no waiting room, no taking time off work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section class="section section-white">
+  <div class="wrap center">
+    <span class="section-eyebrow">$39 Discovery Consultation</span>
+    <h2>What's Included In <span class="italic-accent">Your Consultation</span></h2>
+
+    <div class="included-grid" style="grid-template-columns:repeat(2,1fr); max-width:780px; margin-left:auto; margin-right:auto;">
+      <div class="included-card">
+        <span class="included-num">One</span>
+        <h4>30 Minutes, 1-on-1 With Dr. Sahila</h4>
+        <p>A focused, unhurried conversation — not a group call or a call with an assistant.</p>
+      </div>
+      <div class="included-card">
+        <span class="included-num">Two</span>
+        <h4>Full History &amp; Symptom Review</h4>
+        <p>She'll walk through your health history, current medications, and what you've already tried.</p>
+      </div>
+      <div class="included-card">
+        <span class="included-num">Three</span>
+        <h4>Honest Clinical Perspective</h4>
+        <p>A real medical opinion on what's likely driving your symptoms — explained in plain language.</p>
+      </div>
+      <div class="included-card">
+        <span class="included-num">Four</span>
+        <h4>A Personalized Next Step</h4>
+        <p>You'll leave knowing exactly what Dr. Sahila recommends for your specific case — and why.</p>
+      </div>
+    </div>
+    <p class="included-foot">Just $39 for the full session — confirmed at booking.</p>
+    <div class="btn-row" style="margin-top:28px;">
+      <a href="https://pages.sahila.me/consult_sahila" class="btn btn-primary">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET DR SAHILA ============ -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="doc-section">
+      <div class="doc-photo-wrap">
+        <div class="doc-photo">
+          <img src="assets/DSC0765644.jpg" alt="Dr. Sahila with a patient">
+        </div>
+        <div class="doc-credential-pill">MD · Internal Medicine</div>
+      </div>
+      <div class="doc-text">
+        <h3 class="doc-name">Meet Dr. Sahila</h3>
+        <p class="doc-role">Board-Certified Internal Medicine Physician · Princeton Medical Center Trained</p>
+        <p>I'm Dr. Sahila — a board-certified internal medicine physician based in New Jersey. I left conventional practice because I kept watching my patients get more prescriptions and feel worse.</p>
+        <p>I was the patient I couldn't heal. When my own health broke down, I went looking for answers in yoga schools, Ayurvedic classes, and chakra healing programs — not because I believed, but because I was desperate. Within two years, I was pill-free.</p>
+        <p>Now, through a focused 1-on-1 consultation, I help women understand what's actually going on in their bodies — combining everything I learned as a physician with everything that actually healed me.</p>
+        <div class="doc-stats">
+          <div><div class="doc-stat-num">Hundreds</div><div class="doc-stat-label">Of Women Guided</div></div>
+          <div><div class="doc-stat-num">15+ Yrs</div><div class="doc-stat-label">Clinical Practice</div></div>
+          <div><div class="doc-stat-num">Pill-Free</div><div class="doc-stat-label">By Her Own System</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:10px;">
+      <span class="section-eyebrow">Real Results, Real Labs</span>
+      <h2>What Happens When Someone <span class="italic-accent">Finally Looks At The Full Picture</span></h2>
+    </div>
+
+    <div class="proof-hero">
+      <div>
+        <span class="proof-eyebrow">Christine · New Jersey</span>
+        <p class="proof-quote">"I have tried every possible thing you can imagine to lower my A1C. My cholesterol has never, in 28 years, been normal — and now it is."</p>
+        <p class="proof-name">— Christine, Type 2 Diabetes &amp; High Cholesterol</p>
+      </div>
+      <div class="proof-stats">
+        <div class="proof-stat-row">
+          <div class="proof-stat-num">−9 pts</div>
+          <div class="proof-stat-text">A1C dropped from 7.9 in just 6 weeks — without changing her medication.</div>
+        </div>
+        <div class="proof-stat-row">
+          <div class="proof-stat-num">28 yrs</div>
+          <div class="proof-stat-text">Cholesterol normalized for the first time in nearly three decades.</div>
+        </div>
+        <div class="proof-stat-row">
+          <div class="proof-stat-num">0</div>
+          <div class="proof-stat-text">New pills added to get there. Not one.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Slowly and slowly, with consistent practice and guidance, I can now move my body. It goes beyond yoga — it's the nutrition timing that made the real difference."</p>
+        <div class="testimonial-foot">
+          <div class="testimonial-avatar">P</div>
+          <div><div class="testimonial-name">Client, US</div><div class="testimonial-tag">Chronic inflammation, joint pain</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Dr. Sahila brings together her background as an internal medicine physician with the ancient science of yoga and chakra meditation. Scientific explanations from a trained physician — not generic wellness advice."</p>
+        <div class="testimonial-foot">
+          <div class="testimonial-avatar">AM</div>
+          <div><div class="testimonial-name">Dr. Amy Mazeski, MD</div><div class="testimonial-tag">Dallas, Texas — Physician</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>"For the past 25 years I struggled with cholesterol and blood sugar. In all my experience with healers, doctors, and yoga gurus — I have finally found the one that actually worked."</p>
+        <div class="testimonial-foot">
+          <div class="testimonial-avatar">R</div>
+          <div><div class="testimonial-name">Client, US</div><div class="testimonial-tag">Cholesterol &amp; blood sugar, 25 years</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section-white">
+  <div class="wrap center">
+    <span class="section-eyebrow">Your Consultation</span>
+    <h2>One Simple Price. <span class="italic-accent">No Hidden Steps.</span></h2>
+    <p class="section-sub">Just a focused 30 minutes with Dr. Sahila — confirmed the moment you book.</p>
+
+    <div class="pricing-grid" style="grid-template-columns:1fr; max-width:420px; margin-left:auto; margin-right:auto;">
+      <div class="price-card featured">
+        <span class="price-pill">Most Booked</span>
+        <span class="price-stage">Discovery Consultation</span>
+        <h3>30 Minutes With Dr. Sahila</h3>
+        <p class="sub">1-on-1 · Personalized · Confirmed at booking</p>
+        <div class="price-amount">$39</div>
+        <p class="price-split">Charged when you book your slot</p>
+        <ul class="price-feats">
+          <li>Full history &amp; symptom review</li>
+          <li>Honest clinical perspective on your case</li>
+          <li>A personalized next-step recommendation</li>
+          <li>Direct, unhurried time with Dr. Sahila</li>
+        </ul>
+        <a href="https://pages.sahila.me/consult_sahila" class="btn btn-primary">Book Your $39 Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-cream">
+  <div class="wrap center">
+    <span class="section-eyebrow">Frequently Asked Questions</span>
+    <h2>Before You Book Your <span class="italic-accent">Consultation</span></h2>
+
+    <div class="faq-list" style="text-align:left;">
+      <details class="faq-item">
+        <summary class="faq-q">Will I be talking directly with Dr. Sahila?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes. Your consultation is a 1-on-1 conversation directly with Dr. Sahila — not an intake coordinator or assistant.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What happens during the 30 minutes?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Dr. Sahila will review your health history, current symptoms, and any medications you're on. She'll give you her honest clinical perspective on what's likely going on, and recommend a specific next step for your situation.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is the $39 charged right away?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">Yes. The $39 is charged when you book your slot, which confirms your appointment time with Dr. Sahila.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will this replace my current doctor or medications?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">No. This consultation works alongside your existing care. Dr. Sahila will never tell you to stop a medication on your own — any change happens under proper medical oversight.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if I have multiple conditions — diabetes, thyroid, and PCOD together?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">That's exactly the kind of case this consultation is built for. Dr. Sahila looks at your full picture — not just one condition in isolation — before recommending a next step.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Am I committing to anything beyond the consultation?<span class="faq-icon">+</span></summary>
+        <div class="faq-a">No. The $39 covers the consultation itself. If Dr. Sahila recommends further support afterward, that's a separate decision you make on your own time.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>If Nothing Changes — Where Are You In Two Years?</h2>
+      <p>Book your $39 consultation. Dr. Sahila will look at your full picture and give you an honest, personalized next step.</p>
+      <div class="btn-row">
+        <a href="https://pages.sahila.me/consult_sahila" class="btn btn-primary" style="background:var(--white); color:var(--teal-dark); box-shadow:0 8px 24px -8px rgba(0,0,0,0.2);">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-logo">Wellness with Sahila</div>
+    <div>© 2026 Wellness with Sahila. All rights reserved. Not a substitute for emergency medical care.</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://pages.sahila.me/consult_sahila" class="btn btn-primary">Book Your $39 Consultation →</a>
+</div>
+
+</body>
+</html>
