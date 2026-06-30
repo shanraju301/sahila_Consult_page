@@ -67,7 +67,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero{
     background:var(--cream);
     position:relative;
-    padding:70px 0 70px;
+    padding:36px 0 28px;
+  }
+  .hero-slim{
+    padding:36px 0 28px;
   }
   .hero-stage{
     position:relative; max-width:780px; margin:0 auto;
@@ -137,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   /* ---------- Why wait section ---------- */
-  .section{padding:88px 0;}
+  .section{padding:56px 0;}
   .section-cream{background:var(--cream);}
   .section-white{background:var(--white);}
   .section-dark{background:var(--dark); color:var(--cream);}
@@ -492,51 +495,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="topbar">LIMITED AVAILABILITY THIS MONTH — <span>$39 Discovery Consultation With Dr. Sahila</span></div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-stage">
-      <div class="quote-card quote-1">"Your A1C is borderline — let's keep monitoring it."</div>
-      <div class="quote-card quote-2">"Thyroid's a little off, nothing major."</div>
-      <div class="quote-card quote-3">"Your cholesterol is high. Let's add another pill."</div>
-      <div class="quote-card quote-4">"PCOD is common, just manage your weight."</div>
-      <div class="quote-card quote-5">"Your kidney numbers are something to watch."</div>
-      <div class="quote-card quote-6">"It's probably just stress."</div>
-
-      <div class="hook-card">
-        <span class="hook-eyebrow">Sound Familiar?</span>
-        <h1>Seen Every Doctor. <span class="hl">Still No Real Answer?</span></h1>
-        <div class="hook-divider"></div>
-        <p class="hook-sub">Modern medicine manages your numbers. It was never designed to find what's actually driving your diabetes, thyroid, PCOD, or blood pressure.</p>
-      </div>
-    </div>
-
-    <div class="hero-bottom">
-      <div class="hero-doc-row">
-        <div class="hero-doc-photo">
-          <img src="assets/DSC075044change.jpg" alt="Dr. Sahila">
-        </div>
-        <div class="hero-doc-text">
-          <div class="hero-doc-name">Dr. Sahila, MD</div>
-          <div class="hero-doc-role">Board-Certified Internal Medicine, NJ</div>
-        </div>
-      </div>
-      <div class="btn-row">
-        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
-      </div>
-      <p class="hero-micro">Just $39 · 30 minutes with Dr. Sahila · Limited slots each week</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ INTRO VIDEO ============ -->
-<section class="section video-section section-cream" style="padding-top:64px;">
+<section class="section video-section section-cream" style="padding:48px 0;">
   <div class="wrap">
-    <div class="video-split">
-      <div class="video-split-text">
-        <span class="section-eyebrow">A Quick Word From Dr. Sahila</span>
-        <h2>Before You Book, <span class="italic-accent">Hear It From Her Directly</span></h2>
-        <p>A short, personal note on what to expect from your consultation — and why she built it this way.</p>
+    <!-- Two-column: video left, text right, headline spans both -->
+    <div class="video-split" style="align-items:flex-start; gap:40px;">
+      <!-- Full-width headline spanning both columns -->
+      <div style="grid-column: 1 / -1; text-align:center; margin-bottom:10px;">
+        <span class="section-eyebrow" style="display:block; margin-bottom:8px;">Sound Familiar?</span>
+        <h1 style="font-family:'Fraunces', serif; font-size:clamp(30px,4.5vw,52px); font-weight:600; line-height:1.12; color:var(--dark);">
+          Seen Multiple Doctors.<br><span class="italic-accent">No Real Solutions Yet?</span>
+        </h1>
       </div>
       <div class="video-tile-vertical" data-vimeo-id="1193042970" data-vimeo-hash="760d41768e" onclick="loadVideo(this)">
         <img src="assets/dr-sahila-intro-thumb.jpg" alt="Dr. Sahila introduces the $39 discovery consultation">
@@ -544,6 +513,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg viewBox="0 0 24 24" fill="none"><path d="M5 3l16 9-16 9V3z" fill="#1a2e2c"/></svg>
         </div>
         <div class="video-caption">Dr. Sahila — What To Expect (2 min)</div>
+      </div>
+      <div class="video-split-text">
+        <p style="font-size:17px; color:rgba(26,46,42,0.8); line-height:1.65; margin-bottom:28px; text-align:center;">
+          One pill for cholesterol. Another for blood pressure. Now metformin.<br>
+          <strong>Every year, a new prescription. Never an actual answer.</strong><br><br>
+          Dr. Sahila built this consultation to find what's actually driving it — and stop managing it.
+        </p>
+        <div class="hero-doc-row" style="margin-bottom:28px;">
+          <div class="hero-doc-photo">
+            <img src="assets/DSC075044change.jpg" alt="Dr. Sahila">
+          </div>
+          <div class="hero-doc-text">
+            <div class="hero-doc-name">Dr. Sahila, MD</div>
+            <div class="hero-doc-role">Board-Certified Internal Medicine, NJ</div>
+          </div>
+        </div>
+        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary" style="font-size:13px; white-space:nowrap;">Book your Discovery Call ($39) <span class="btn-arrow">→</span></a>
+        <p class="hero-micro" style="margin-top:14px; text-align:center;">Limited slots each week</p>
       </div>
     </div>
   </div>
@@ -677,7 +664,7 @@ function loadVideo(tile) {
     </div>
     <p class="included-foot">Just $39 for the full session — confirmed at booking.</p>
     <div class="btn-row" style="margin-top:28px;">
-      <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
+      <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book your Discovery Call ($39) <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -785,7 +772,7 @@ function loadVideo(tile) {
           <li>A personalized next-step recommendation</li>
           <li>Direct, unhurried time with Dr. Sahila</li>
         </ul>
-        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book Your $39 Consultation</a>
+        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book your Discovery Call ($39)</a>
       </div>
     </div>
   </div>
@@ -833,7 +820,7 @@ function loadVideo(tile) {
       <h2>If Nothing Changes — Where Are You In Two Years?</h2>
       <p>Book your $39 consultation. Dr. Sahila will look at your full picture and give you an honest, personalized next step.</p>
       <div class="btn-row">
-        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary" style="background:var(--white); color:var(--teal-dark); box-shadow:0 8px 24px -8px rgba(0,0,0,0.2);">Book Your $39 Consultation <span class="btn-arrow">→</span></a>
+        <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary" style="background:var(--white); color:var(--teal-dark); box-shadow:0 8px 24px -8px rgba(0,0,0,0.2);">Book your Discovery Call ($39) <span class="btn-arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -847,7 +834,7 @@ function loadVideo(tile) {
 </footer>
 
 <div class="sticky-cta">
-  <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book Your $39 Consultation →</a>
+  <a href="booking.html" target="_blank" rel="noopener" data-gtm-event="book_consultation_click" class="btn btn-primary">Book your Discovery Call ($39) →</a>
 </div>
 
 <script defer src="/_vercel/insights/script.js"></script>
