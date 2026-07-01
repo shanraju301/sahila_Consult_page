@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Header */
   .page-header {
     background: var(--cream);
-    padding: 48px 28px 32px;
+    padding: 20px 28px 16px;
     text-align: center;
     border-bottom: 1px solid var(--line);
   }
@@ -54,7 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600; color: var(--teal);
     text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
   .back-link:hover { color: var(--teal-dark); }
   .eyebrow {
@@ -62,22 +62,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-transform: uppercase; color: var(--rust); margin-bottom: 14px;
   }
   .page-header h1 {
-    font-size: clamp(26px, 4vw, 38px);
+    font-size: clamp(22px, 4vw, 34px);
     color: var(--dark);
-    margin-bottom: 14px;
+    margin-bottom: 0;
   }
   .page-header h1 em { font-style: italic; color: var(--teal); }
-  .page-header p {
-    font-size: 16px; color: rgba(26,46,42,0.7);
-    max-width: 520px; margin: 0 auto;
-  }
 
   /* Divider */
-  .divider { width: 42px; height: 2px; background: var(--rust-light); margin: 18px auto; border-radius: 2px; }
+  .divider { display: none; }
 
   /* Calendar section */
   .calendar-section {
-    padding: 48px 0 80px;
+    padding: 20px 0 40px;
   }
   .calendar-card {
     background: var(--white);
@@ -96,8 +92,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Trust bar */
   .trust-bar {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 28px;
-    margin-top: 36px; padding: 28px 0;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+    margin-top: 20px; padding: 16px 0;
     border-top: 1px solid var(--line);
   }
   .trust-item {
@@ -114,8 +110,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer a { color: var(--rust-light); text-decoration: none; }
 
   @media (max-width: 600px) {
-    .page-header { padding: 32px 20px 24px; }
-    .calendar-card { border-radius: 12px; padding: 4px; }
+    .page-header { padding: 14px 16px 12px; }
+    .calendar-card { border-radius: 12px; padding: 2px; }
+    .calendar-section { padding: 14px 0 24px; }
+    .trust-bar { gap: 12px; margin-top: 14px; padding: 12px 0; }
   }
 </style>
 </head>
@@ -133,10 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Header -->
 <header class="page-header">
   <a href="index.html" class="back-link">← Back</a>
-  <div class="eyebrow">Discovery Consultation</div>
-  <h1>Book Your <em>$39 Session</em><br>With Dr. Sahila</h1>
-  <div class="divider"></div>
-  <p>Choose a time that works for you. Dr. Sahila will review your health history before the call — come ready to talk.</p>
+  <h1>Choose your Date and Time<br>with <em>Dr. Sahila</em></h1>
 </header>
 
 <!-- Calendar embed -->
