@@ -81,13 +81,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: 0 20px 60px -20px rgba(26,46,42,0.15);
     overflow: hidden;
     padding: 8px;
+    position: relative;
   }
   .calendar-card iframe {
-    width: 100%;
+    width: 1px;
+    min-width: 100%;
     border: none;
-    overflow: hidden;
-    min-height: 700px;
+    min-height: 750px;
     display: block;
+  }
+
+  /* Loading state */
+  .calendar-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 20px;
+    gap: 14px;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .calendar-loading.hidden { opacity: 0; }
+  .loading-spinner {
+    width: 36px; height: 36px;
+    border: 3px solid rgba(31,139,128,0.2);
+    border-top-color: var(--teal);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  .loading-text { font-size: 13px; color: rgba(26,46,42,0.5); font-weight: 500; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 600px) {
+    .calendar-card iframe { min-height: 900px; }
   }
 
   /* Trust bar */
@@ -114,6 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .calendar-card { border-radius: 12px; padding: 2px; }
     .calendar-section { padding: 14px 0 24px; }
     .trust-bar { gap: 12px; margin-top: 14px; padding: 12px 0; }
+    .trust-item { font-size: 12px; }
   }
 </style>
 </head>
@@ -134,10 +165,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="calendar-section">
   <div class="wrap">
     <div class="calendar-card">
+      <div class="calendar-loading" id="calLoading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading your booking calendar…</div>
+      </div>
       <iframe src="https://api.leadconnectorhq.com/widget/booking/E1Kcwucb4jg2pJ7TJ8t0"
-        style="width:100%;border:none;overflow:hidden;"
-        scrolling="no"
-        id="HP5Qm5Ou3V32EfJYtejp_1782828477476">
+        style="width:1px;min-width:100%;border:none;display:block;min-height:750px;"
+        allow="payment"
+        id="HP5Qm5Ou3V32EfJYtejp_1782828477476"
+        onload="document.getElementById('calLoading').classList.add('hidden')">
       </iframe>
     </div>
 
